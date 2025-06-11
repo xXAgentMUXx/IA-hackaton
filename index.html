@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -25,13 +26,25 @@
                 <label class="block">Go stockés dans le cloud :</label>
                 <input type="number" name="cloudStorage" class="w-full border rounded p-2" min="0">
             </div>
+            <div>
+                <label class="block">Nombre de recherches Google :</label>
+                <input type="number" name="searchQueries" class="w-full border rounded p-2" min="0">
+            </div>
+            <div>
+                <label class="block">Heures passées sur les réseaux sociaux :</label>
+                <input type="number" name="socialMediaHours" class="w-full border rounded p-2" min="0">
+            </div>
+            <div>
+                <label class="block">Données téléchargées (en Go) :</label>
+                <input type="number" name="downloads" class="w-full border rounded p-2" min="0">
+            </div>
             <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Calculer</button>
         </form>
 
         <div id="result" class="mt-6 hidden">
             <h2 class="text-xl font-semibold">🌱 Résultat :</h2>
             <p id="co2Output" class="mt-2 text-lg font-bold"></p>
-            <div id="tips" class="mt-4 text-sm text-gray-600"></div>
+            <ul id="tips" class="mt-4 text-sm text-gray-600 list-disc pl-5"></ul>
         </div>
     </div>
 
@@ -44,7 +57,10 @@
                 streaming: parseFloat(form.streaming.value) || 0,
                 emails: parseInt(form.emails.value) || 0,
                 videoCalls: parseFloat(form.videoCalls.value) || 0,
-                cloudStorage: parseFloat(form.cloudStorage.value) || 0
+                cloudStorage: parseFloat(form.cloudStorage.value) || 0,
+                searchQueries: parseInt(form.searchQueries.value) || 0,
+                socialMediaHours: parseFloat(form.socialMediaHours.value) || 0,
+                downloads: parseFloat(form.downloads.value) || 0
             };
 
             const res = await fetch('http://localhost:8080/api/calculate', {
@@ -54,7 +70,7 @@
             });
 
             const result = await res.json();
-            document.getElementById('co2Output').textContent = `Votre empreinte carbone estimée : ${result.co2} g de CO₂`;
+            document.getElementById('co2Output').textContent = `Votre empreinte carbone estimée : ${result.co2.toFixed(2)} g de CO₂`;
             document.getElementById('tips').innerHTML = result.tips.map(t => `<li>✔️ ${t}</li>`).join('');
             document.getElementById('result').classList.remove('hidden');
         });
