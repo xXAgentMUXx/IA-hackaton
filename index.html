@@ -1,127 +1,180 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulateur Pollution Numérique</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulateur Pollution Numérique</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-100 text-gray-800">
-    <div class="max-w-xl mx-auto p-6 mt-10 bg-white rounded shadow">
-        <h1 class="text-2xl font-bold mb-4">🌍 Simulateur de Pollution Numérique</h1>
-        <form id="simulator-form" class="space-y-4">
-            <div>
-                <label class="block">Type d'appareil :</label>
-                <select name="deviceType" id="deviceType" class="w-full border rounded p-2">
-                    <option value="ordinateur">Ordinateur</option>
-                    <option value="telephone">Téléphone</option>
-                </select>
-            </div>
+  <div class="max-w-xl mx-auto p-6 mt-10 bg-white rounded shadow">
+    <h1 class="text-2xl font-bold mb-4">🌍 Simulateur de Pollution Numérique</h1>
+    <form id="simulator-form" class="space-y-4">
+      <div>
+        <label class="block">Type d'appareil :</label>
+        <select name="deviceType" id="deviceType" class="w-full border rounded p-2">
+          <option value="ordinateur">Ordinateur</option>
+          <option value="telephone">Téléphone</option>
+        </select>
+      </div>
 
-            <div id="phoneModelContainer" class="hidden">
-                <label class="block">Modèle de téléphone :</label>
-                <select name="phoneModel" id="phoneModel" class="w-full border rounded p-2">
-                    <option value="iphone13">iPhone 13</option>
-                    <option value="samsungS21">Samsung S21</option>
-                    <option value="fairphone4">Fairphone 4</option>
-                    <option value="autre">Autre</option>
-                </select>
-            </div>
+      <div id="phoneModelContainer" class="hidden relative">
+        <label class="block">Modèle de téléphone :</label>
+        <input type="text" id="phoneSearch" name="phoneModel" class="w-full border rounded p-2" autocomplete="off" placeholder="Ex: iPhone 13">
+        <ul id="phoneSuggestions" class="absolute z-10 bg-white border w-full mt-1 rounded shadow text-sm hidden"></ul>
+        <p id="phoneError" class="text-red-600 text-sm mt-1 hidden">Modèle invalide. Veuillez choisir un modèle reconnu.</p>
+      </div>
 
-            <div class="usage-ordinateur">
-                <label class="block">Heures de visioconférence :</label>
-                <input type="number" name="videoCalls" class="w-full border rounded p-2" min="0">
-            </div>
+      <div class="usage-ordinateur">
+        <label class="block">Heures de visioconférence :</label>
+        <input type="number" name="videoCalls" class="w-full border rounded p-2" min="0">
+      </div>
 
-            <div>
-                <label class="block">Heures de streaming vidéo :</label>
-                <input type="number" name="streaming" class="w-full border rounded p-2" min="0">
-            </div>
-            <div>
-                <label class="block">Nombre d'e-mails envoyés :</label>
-                <input type="number" name="emails" class="w-full border rounded p-2" min="0">
-            </div>
-            <div>
-                <label class="block">Go stockés dans le cloud :</label>
-                <input type="number" name="cloudStorage" class="w-full border rounded p-2" min="0">
-            </div>
-            <div>
-                <label class="block">Nombre de recherches Google :</label>
-                <input type="number" name="searchQueries" class="w-full border rounded p-2" min="0">
-            </div>
-            <div>
-                <label class="block">Heures passées sur les réseaux sociaux :</label>
-                <input type="number" name="socialMediaHours" class="w-full border rounded p-2" min="0">
-            </div>
-            <div>
-                <label class="block">Données téléchargées (en Go) :</label>
-                <input type="number" name="downloads" class="w-full border rounded p-2" min="0">
-            </div>
+      <div>
+        <label class="block">Heures de streaming vidéo :</label>
+        <input type="number" name="streaming" class="w-full border rounded p-2" min="0">
+      </div>
+      <div>
+        <label class="block">Nombre d'e-mails envoyés :</label>
+        <input type="number" name="emails" class="w-full border rounded p-2" min="0">
+      </div>
+      <div>
+        <label class="block">Go stockés dans le cloud :</label>
+        <input type="number" name="cloudStorage" class="w-full border rounded p-2" min="0">
+      </div>
+      <div>
+        <label class="block">Nombre de recherches Google :</label>
+        <input type="number" name="searchQueries" class="w-full border rounded p-2" min="0">
+      </div>
+      <div>
+        <label class="block">Heures passées sur les réseaux sociaux :</label>
+        <input type="number" name="socialMediaHours" class="w-full border rounded p-2" min="0">
+      </div>
+      <div>
+        <label class="block">Données téléchargées (en Go) :</label>
+        <input type="number" name="downloads" class="w-full border rounded p-2" min="0">
+      </div>
+      
+      <div class="usage-telephone hidden">
+        <label class="block">Heures d'écoute de musique en streaming :</label>
+        <input type="number" name="musicStreaming" class="w-full border rounded p-2" min="0">
+      </div>
+      <div class="usage-telephone hidden">
+        <label class="block">Nombre de photos envoyées :</label>
+        <input type="number" name="photoSharing" class="w-full border rounded p-2" min="0">
+      </div>
+      <div class="usage-telephone hidden">
+        <label class="block">Utilisation GPS (heures) :</label>
+        <input type="number" name="gpsUsage" class="w-full border rounded p-2" min="0">
+      </div>
 
-            <!-- Usages spécifiques au téléphone -->
-            <div class="usage-telephone hidden">
-                <label class="block">Heures d'écoute de musique en streaming :</label>
-                <input type="number" name="musicStreaming" class="w-full border rounded p-2" min="0">
-            </div>
-            <div class="usage-telephone hidden">
-                <label class="block">Nombre de photos envoyées :</label>
-                <input type="number" name="photoSharing" class="w-full border rounded p-2" min="0">
-            </div>
-            <div class="usage-telephone hidden">
-                <label class="block">Utilisation GPS (heures) :</label>
-                <input type="number" name="gpsUsage" class="w-full border rounded p-2" min="0">
-            </div>
+      <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Calculer</button>
+    </form>
 
-            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Calculer</button>
-        </form>
-
-        <div id="result" class="mt-6 hidden">
-            <h2 class="text-xl font-semibold">🌱 Résultat :</h2>
-            <p id="co2Output" class="mt-2 text-lg font-bold"></p>
-            <ul id="tips" class="mt-4 text-sm text-gray-600 list-disc pl-5"></ul>
-        </div>
+    <div id="result" class="mt-6 hidden">
+      <h2 class="text-xl font-semibold">🌱 Résultat :</h2>
+      <p id="co2Output" class="mt-2 text-lg font-bold"></p>
+      <ul id="tips" class="mt-4 text-sm text-gray-600 list-disc pl-5"></ul>
     </div>
+  </div>
 
-    <script>
-        function toggleUsageFields() {
-            const isPhone = document.getElementById('deviceType').value === 'telephone';
-            document.getElementById('phoneModelContainer').classList.toggle('hidden', !isPhone);
-            document.querySelectorAll('.usage-telephone').forEach(el => el.classList.toggle('hidden', !isPhone));
-            document.querySelectorAll('.usage-ordinateur').forEach(el => el.classList.toggle('hidden', isPhone));
-        }
+  <script>
+    const phoneList = [
+      "iPhone 12", "iPhone 13", "iPhone 14", "Samsung Galaxy S21",
+      "Samsung Galaxy S22", "Google Pixel 6", "Google Pixel 7",
+      "Fairphone 4", "Xiaomi Mi 11", "OnePlus 9", "Galaxy A52"
+    ];
 
-        document.getElementById('deviceType').addEventListener('change', toggleUsageFields);
-        window.addEventListener('DOMContentLoaded', toggleUsageFields);
+    const phoneInput = document.getElementById("phoneSearch");
+    const suggestionBox = document.getElementById("phoneSuggestions");
+    const errorMsg = document.getElementById("phoneError");
 
-        document.getElementById('simulator-form').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = {
-                deviceType: form.deviceType.value,
-                phoneModel: form.phoneModel?.value || null,
-                streaming: parseFloat(form.streaming.value) || 0,
-                emails: parseInt(form.emails.value) || 0,
-                videoCalls: parseFloat(form.videoCalls?.value) || 0,
-                cloudStorage: parseFloat(form.cloudStorage.value) || 0,
-                searchQueries: parseInt(form.searchQueries.value) || 0,
-                socialMediaHours: parseFloat(form.socialMediaHours.value) || 0,
-                downloads: parseFloat(form.downloads.value) || 0,
-                musicStreaming: parseFloat(form.musicStreaming?.value) || 0,
-                photoSharing: parseInt(form.photoSharing?.value) || 0,
-                gpsUsage: parseFloat(form.gpsUsage?.value) || 0
-            };
-
-            const res = await fetch('http://localhost:8080/api/calculate', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(data)
-            });
-
-            const result = await res.json();
-            document.getElementById('co2Output').textContent = `Votre empreinte carbone estimée : ${result.co2.toFixed(2)} g de CO₂`;
-            document.getElementById('tips').innerHTML = result.tips.map(t => `<li>✔️ ${t}</li>`).join('');
-            document.getElementById('result').classList.remove('hidden');
+    function showSuggestions(query) {
+      const matches = phoneList.filter(model =>
+        model.toLowerCase().includes(query.toLowerCase())
+      );
+      suggestionBox.innerHTML = "";
+      if (matches.length > 0 && query.length > 0) {
+        suggestionBox.classList.remove("hidden");
+        matches.forEach(match => {
+          const li = document.createElement("li");
+          li.textContent = match;
+          li.className = "p-2 hover:bg-gray-200 cursor-pointer";
+          li.onclick = () => {
+            phoneInput.value = match;
+            suggestionBox.classList.add("hidden");
+            errorMsg.classList.add("hidden");
+          };
+          suggestionBox.appendChild(li);
         });
-    </script>
+      } else {
+        suggestionBox.classList.add("hidden");
+      }
+    }
+
+    phoneInput.addEventListener("input", () => {
+      showSuggestions(phoneInput.value.trim());
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!suggestionBox.contains(e.target) && e.target !== phoneInput) {
+        suggestionBox.classList.add("hidden");
+      }
+    });
+
+    function toggleUsageFields() {
+      const isPhone = document.getElementById('deviceType').value === 'telephone';
+      document.getElementById('phoneModelContainer').classList.toggle('hidden', !isPhone);
+      document.querySelectorAll('.usage-telephone').forEach(el => el.classList.toggle('hidden', !isPhone));
+      document.querySelectorAll('.usage-ordinateur').forEach(el => el.classList.toggle('hidden', isPhone));
+    }
+
+    document.getElementById('deviceType').addEventListener('change', toggleUsageFields);
+    window.addEventListener('DOMContentLoaded', toggleUsageFields);
+
+    document.getElementById('simulator-form').addEventListener('submit', async function (e) {
+      const isPhone = document.getElementById('deviceType').value === 'telephone';
+      if (isPhone) {
+        const selected = phoneInput.value.trim();
+        const valid = phoneList.includes(selected);
+        if (!valid) {
+          e.preventDefault();
+          errorMsg.classList.remove("hidden");
+          suggestionBox.classList.add("hidden");
+          return;
+        } else {
+          errorMsg.classList.add("hidden");
+        }
+      }
+
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        deviceType: form.deviceType.value,
+        phoneModel: form.phoneModel?.value || null,
+        streaming: parseFloat(form.streaming.value) || 0,
+        emails: parseInt(form.emails.value) || 0,
+        videoCalls: parseFloat(form.videoCalls?.value) || 0,
+        cloudStorage: parseFloat(form.cloudStorage.value) || 0,
+        searchQueries: parseInt(form.searchQueries.value) || 0,
+        socialMediaHours: parseFloat(form.socialMediaHours.value) || 0,
+        downloads: parseFloat(form.downloads.value) || 0,
+        musicStreaming: parseFloat(form.musicStreaming?.value) || 0,
+        photoSharing: parseInt(form.photoSharing?.value) || 0,
+        gpsUsage: parseFloat(form.gpsUsage?.value) || 0
+      };
+
+      const res = await fetch('http://localhost:8080/api/calculate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      document.getElementById('co2Output').textContent = `Votre empreinte carbone estimée : ${result.co2.toFixed(2)} g de CO₂`;
+      document.getElementById('tips').innerHTML = result.tips.map(t => `<li>✔️ ${t}</li>`).join('');
+      document.getElementById('result').classList.remove('hidden');
+    });
+  </script>
 </body>
 </html>
