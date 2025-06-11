@@ -11,16 +11,35 @@
         <h1 class="text-2xl font-bold mb-4">🌍 Simulateur de Pollution Numérique</h1>
         <form id="simulator-form" class="space-y-4">
             <div>
+                <label class="block">Type d'appareil :</label>
+                <select name="deviceType" id="deviceType" class="w-full border rounded p-2">
+                    <option value="ordinateur">Ordinateur</option>
+                    <option value="telephone">Téléphone</option>
+                </select>
+            </div>
+
+            <div id="phoneModelContainer" class="hidden">
+                <label class="block">Modèle de téléphone :</label>
+                <select name="phoneModel" id="phoneModel" class="w-full border rounded p-2">
+                    <option value="iphone13">iPhone 13</option>
+                    <option value="samsungS21">Samsung S21</option>
+                    <option value="fairphone4">Fairphone 4</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+
+            <div class="usage-ordinateur">
+                <label class="block">Heures de visioconférence :</label>
+                <input type="number" name="videoCalls" class="w-full border rounded p-2" min="0">
+            </div>
+
+            <div>
                 <label class="block">Heures de streaming vidéo :</label>
                 <input type="number" name="streaming" class="w-full border rounded p-2" min="0">
             </div>
             <div>
                 <label class="block">Nombre d'e-mails envoyés :</label>
                 <input type="number" name="emails" class="w-full border rounded p-2" min="0">
-            </div>
-            <div>
-                <label class="block">Heures de visioconférence :</label>
-                <input type="number" name="videoCalls" class="w-full border rounded p-2" min="0">
             </div>
             <div>
                 <label class="block">Go stockés dans le cloud :</label>
@@ -38,6 +57,21 @@
                 <label class="block">Données téléchargées (en Go) :</label>
                 <input type="number" name="downloads" class="w-full border rounded p-2" min="0">
             </div>
+
+            <!-- Usages spécifiques au téléphone -->
+            <div class="usage-telephone hidden">
+                <label class="block">Heures d'écoute de musique en streaming :</label>
+                <input type="number" name="musicStreaming" class="w-full border rounded p-2" min="0">
+            </div>
+            <div class="usage-telephone hidden">
+                <label class="block">Nombre de photos envoyées :</label>
+                <input type="number" name="photoSharing" class="w-full border rounded p-2" min="0">
+            </div>
+            <div class="usage-telephone hidden">
+                <label class="block">Utilisation GPS (heures) :</label>
+                <input type="number" name="gpsUsage" class="w-full border rounded p-2" min="0">
+            </div>
+
             <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Calculer</button>
         </form>
 
@@ -49,18 +83,32 @@
     </div>
 
     <script>
+        function toggleUsageFields() {
+            const isPhone = document.getElementById('deviceType').value === 'telephone';
+            document.getElementById('phoneModelContainer').classList.toggle('hidden', !isPhone);
+            document.querySelectorAll('.usage-telephone').forEach(el => el.classList.toggle('hidden', !isPhone));
+            document.querySelectorAll('.usage-ordinateur').forEach(el => el.classList.toggle('hidden', isPhone));
+        }
+
+        document.getElementById('deviceType').addEventListener('change', toggleUsageFields);
+        window.addEventListener('DOMContentLoaded', toggleUsageFields);
+
         document.getElementById('simulator-form').addEventListener('submit', async function (e) {
             e.preventDefault();
-
             const form = e.target;
             const data = {
+                deviceType: form.deviceType.value,
+                phoneModel: form.phoneModel?.value || null,
                 streaming: parseFloat(form.streaming.value) || 0,
                 emails: parseInt(form.emails.value) || 0,
-                videoCalls: parseFloat(form.videoCalls.value) || 0,
+                videoCalls: parseFloat(form.videoCalls?.value) || 0,
                 cloudStorage: parseFloat(form.cloudStorage.value) || 0,
                 searchQueries: parseInt(form.searchQueries.value) || 0,
                 socialMediaHours: parseFloat(form.socialMediaHours.value) || 0,
-                downloads: parseFloat(form.downloads.value) || 0
+                downloads: parseFloat(form.downloads.value) || 0,
+                musicStreaming: parseFloat(form.musicStreaming?.value) || 0,
+                photoSharing: parseInt(form.photoSharing?.value) || 0,
+                gpsUsage: parseFloat(form.gpsUsage?.value) || 0
             };
 
             const res = await fetch('http://localhost:8080/api/calculate', {
