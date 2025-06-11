@@ -128,7 +128,7 @@ func phonesHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func AccueilHandler(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "index.html")
+	http.ServeFile(w, r, "web/index.html")
 }
 
 func main() {
@@ -138,6 +138,7 @@ func main() {
 	mux.HandleFunc("/", AccueilHandler)
 	mux.HandleFunc("/api/calculate", calculateHandler)
 	mux.HandleFunc("/api/phones", phonesHandler)
+	mux.Handle("/web/", http.StripPrefix("/web/", http.FileServer(http.Dir("web"))))
 
 	handler := cors.AllowAll().Handler(mux)
 	log.Println("Serveur disponible sur http://localhost:8080")
