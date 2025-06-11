@@ -1,0 +1,63 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur Pollution Numérique</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="max-w-xl mx-auto p-6 mt-10 bg-white rounded shadow">
+        <h1 class="text-2xl font-bold mb-4">🌍 Simulateur de Pollution Numérique</h1>
+        <form id="simulator-form" class="space-y-4">
+            <div>
+                <label class="block">Heures de streaming vidéo :</label>
+                <input type="number" name="streaming" class="w-full border rounded p-2" min="0">
+            </div>
+            <div>
+                <label class="block">Nombre d'e-mails envoyés :</label>
+                <input type="number" name="emails" class="w-full border rounded p-2" min="0">
+            </div>
+            <div>
+                <label class="block">Heures de visioconférence :</label>
+                <input type="number" name="videoCalls" class="w-full border rounded p-2" min="0">
+            </div>
+            <div>
+                <label class="block">Go stockés dans le cloud :</label>
+                <input type="number" name="cloudStorage" class="w-full border rounded p-2" min="0">
+            </div>
+            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Calculer</button>
+        </form>
+
+        <div id="result" class="mt-6 hidden">
+            <h2 class="text-xl font-semibold">🌱 Résultat :</h2>
+            <p id="co2Output" class="mt-2 text-lg font-bold"></p>
+            <div id="tips" class="mt-4 text-sm text-gray-600"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('simulator-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const data = {
+                streaming: parseFloat(form.streaming.value) || 0,
+                emails: parseInt(form.emails.value) || 0,
+                videoCalls: parseFloat(form.videoCalls.value) || 0,
+                cloudStorage: parseFloat(form.cloudStorage.value) || 0
+            };
+
+            const res = await fetch('http://localhost:8080/api/calculate', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+            document.getElementById('co2Output').textContent = `Votre empreinte carbone estimée : ${result.co2} g de CO₂`;
+            document.getElementById('tips').innerHTML = result.tips.map(t => `<li>✔️ ${t}</li>`).join('');
+            document.getElementById('result').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
