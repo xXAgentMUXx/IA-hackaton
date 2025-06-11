@@ -53,10 +53,9 @@ func calculateHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(result)
 }
 
-func accueilHandler() {
-	
+func AccueilHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "index.html")
 }
-
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/api/calculate", calculateHandler)
