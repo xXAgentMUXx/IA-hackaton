@@ -1,0 +1,630 @@
+[
+    {
+      "model": "Apple iPhone",
+      "co2": 78
+    },
+    {
+      "model": "Apple iPhone 3G",
+      "co2": 61
+    },
+    {
+      "model": "Apple iPhone 3GS",
+      "co2": 97
+    },
+    {
+      "model": "Apple iPhone 4",
+      "co2": 68
+    },
+    {
+      "model": "Apple iPhone 4S",
+      "co2": 66
+    },
+    {
+      "model": "Apple iPhone 5",
+      "co2": 47
+    },
+    {
+      "model": "Apple iPhone 5c",
+      "co2": 74
+    },
+    {
+      "model": "Apple iPhone 5s",
+      "co2": 66
+    },
+    {
+      "model": "Apple iPhone 6",
+      "co2": 57
+    },
+    {
+      "model": "Apple iPhone 6 Plus",
+      "co2": 92
+    },
+    {
+      "model": "Apple iPhone 6s",
+      "co2": 79
+    },
+    {
+      "model": "Apple iPhone 6s Plus",
+      "co2": 49
+    },
+    {
+      "model": "Apple iPhone SE",
+      "co2": 46
+    },
+    {
+      "model": "Apple iPhone 7",
+      "co2": 91
+    },
+    {
+      "model": "Apple iPhone 7 Plus",
+      "co2": 62
+    },
+    {
+      "model": "Apple iPhone 8",
+      "co2": 73
+    },
+    {
+      "model": "Apple iPhone 8 Plus",
+      "co2": 46
+    },
+    {
+      "model": "Apple iPhone X",
+      "co2": 79
+    },
+    {
+      "model": "Apple iPhone XR",
+      "co2": 50
+    },
+    {
+      "model": "Apple iPhone XS",
+      "co2": 66
+    },
+    {
+      "model": "Apple iPhone XS Max",
+      "co2": 47
+    },
+    {
+      "model": "Apple iPhone 11",
+      "co2": 56
+    },
+    {
+      "model": "Apple iPhone 11 Pro",
+      "co2": 65
+    },
+    {
+      "model": "Apple iPhone 11 Pro Max",
+      "co2": 55
+    },
+    {
+      "model": "Apple iPhone SE (2020)",
+      "co2": 65
+    },
+    {
+      "model": "Apple iPhone 12",
+      "co2": 64
+    },
+    {
+      "model": "Apple iPhone 12 mini",
+      "co2": 44
+    },
+    {
+      "model": "Apple iPhone 12 Pro",
+      "co2": 93
+    },
+    {
+      "model": "Apple iPhone 12 Pro Max",
+      "co2": 93
+    },
+    {
+      "model": "Apple iPhone 13",
+      "co2": 75
+    },
+    {
+      "model": "Apple iPhone 13 mini",
+      "co2": 40
+    },
+    {
+      "model": "Apple iPhone 13 Pro",
+      "co2": 88
+    },
+    {
+      "model": "Apple iPhone 13 Pro Max",
+      "co2": 94
+    },
+    {
+      "model": "Apple iPhone 14",
+      "co2": 71
+    },
+    {
+      "model": "Apple iPhone 14 Plus",
+      "co2": 59
+    },
+    {
+      "model": "Apple iPhone 14 Pro",
+      "co2": 49
+    },
+    {
+      "model": "Apple iPhone 14 Pro Max",
+      "co2": 67
+    },
+    {
+      "model": "Apple iPhone 15",
+      "co2": 84
+    },
+    {
+      "model": "Apple iPhone 15 Plus",
+      "co2": 71
+    },
+    {
+      "model": "Apple iPhone 15 Pro",
+      "co2": 96
+    },
+    {
+      "model": "Apple iPhone 15 Pro Max",
+      "co2": 42
+    },
+    {
+      "model": "Apple iPhone 16",
+      "co2": 44
+    },
+    {
+      "model": "Apple iPhone 16 Pro",
+      "co2": 45
+    },
+    {
+      "model": "Samsung Galaxy S",
+      "co2": 72
+    },
+    {
+      "model": "Samsung Galaxy S2",
+      "co2": 63
+    },
+    {
+      "model": "Samsung Galaxy S3",
+      "co2": 49
+    },
+    {
+      "model": "Samsung Galaxy S4",
+      "co2": 77
+    },
+    {
+      "model": "Samsung Galaxy S5",
+      "co2": 71
+    },
+    {
+      "model": "Samsung Galaxy S6",
+      "co2": 55
+    },
+    {
+      "model": "Samsung Galaxy S6 Edge",
+      "co2": 72
+    },
+    {
+      "model": "Samsung Galaxy S7",
+      "co2": 96
+    },
+    {
+      "model": "Samsung Galaxy S7 Edge",
+      "co2": 79
+    },
+    {
+      "model": "Samsung Galaxy S8",
+      "co2": 50
+    },
+    {
+      "model": "Samsung Galaxy S8+",
+      "co2": 43
+    },
+    {
+      "model": "Samsung Galaxy S9",
+      "co2": 45
+    },
+    {
+      "model": "Samsung Galaxy S9+",
+      "co2": 89
+    },
+    {
+      "model": "Samsung Galaxy S10",
+      "co2": 81
+    },
+    {
+      "model": "Samsung Galaxy S10e",
+      "co2": 78
+    },
+    {
+      "model": "Samsung Galaxy S10+",
+      "co2": 83
+    },
+    {
+      "model": "Samsung Galaxy S20",
+      "co2": 100
+    },
+    {
+      "model": "Samsung Galaxy S20+",
+      "co2": 86
+    },
+    {
+      "model": "Samsung Galaxy S20 Ultra",
+      "co2": 84
+    },
+    {
+      "model": "Samsung Galaxy S21",
+      "co2": 88
+    },
+    {
+      "model": "Samsung Galaxy S21+",
+      "co2": 71
+    },
+    {
+      "model": "Samsung Galaxy S21 Ultra",
+      "co2": 72
+    },
+    {
+      "model": "Samsung Galaxy S22",
+      "co2": 67
+    },
+    {
+      "model": "Samsung Galaxy S22+",
+      "co2": 53
+    },
+    {
+      "model": "Samsung Galaxy S22 Ultra",
+      "co2": 44
+    },
+    {
+      "model": "Samsung Galaxy S23",
+      "co2": 53
+    },
+    {
+      "model": "Samsung Galaxy S23+",
+      "co2": 72
+    },
+    {
+      "model": "Samsung Galaxy S23 Ultra",
+      "co2": 79
+    },
+    {
+      "model": "Samsung Galaxy S24",
+      "co2": 62
+    },
+    {
+      "model": "Samsung Galaxy S24+",
+      "co2": 62
+    },
+    {
+      "model": "Samsung Galaxy S24 Ultra",
+      "co2": 93
+    },
+    {
+      "model": "Xiaomi Mi 1",
+      "co2": 87
+    },
+    {
+      "model": "Xiaomi Mi 2",
+      "co2": 67
+    },
+    {
+      "model": "Xiaomi Mi 3",
+      "co2": 62
+    },
+    {
+      "model": "Xiaomi Mi 4",
+      "co2": 53
+    },
+    {
+      "model": "Xiaomi Mi 5",
+      "co2": 63
+    },
+    {
+      "model": "Xiaomi Mi 6",
+      "co2": 71
+    },
+    {
+      "model": "Xiaomi Mi 8",
+      "co2": 43
+    },
+    {
+      "model": "Xiaomi Mi 9",
+      "co2": 74
+    },
+    {
+      "model": "Xiaomi Mi 10",
+      "co2": 58
+    },
+    {
+      "model": "Xiaomi Mi 11",
+      "co2": 72
+    },
+    {
+      "model": "Xiaomi Mi 11 Ultra",
+      "co2": 99
+    },
+    {
+      "model": "Xiaomi Mi 12",
+      "co2": 43
+    },
+    {
+      "model": "Xiaomi Mi 12 Pro",
+      "co2": 63
+    },
+    {
+      "model": "Xiaomi Mi 13",
+      "co2": 42
+    },
+    {
+      "model": "Xiaomi Mi 13 Pro",
+      "co2": 83
+    },
+    {
+      "model": "Xiaomi Mi 14",
+      "co2": 64
+    },
+    {
+      "model": "Xiaomi Mi 14 Ultra",
+      "co2": 69
+    },
+    {
+      "model": "Xiaomi Redmi Note 7",
+      "co2": 83
+    },
+    {
+      "model": "Xiaomi Redmi Note 8",
+      "co2": 78
+    },
+    {
+      "model": "Xiaomi Redmi Note 9",
+      "co2": 95
+    },
+    {
+      "model": "Xiaomi Redmi Note 10",
+      "co2": 52
+    },
+    {
+      "model": "Xiaomi Redmi Note 11",
+      "co2": 64
+    },
+    {
+      "model": "Xiaomi Redmi Note 12",
+      "co2": 45
+    },
+    {
+      "model": "Xiaomi Redmi Note 13",
+      "co2": 88
+    },
+    {
+      "model": "Motorola Razr V3",
+      "co2": 41
+    },
+    {
+      "model": "Motorola Moto G",
+      "co2": 91
+    },
+    {
+      "model": "Motorola Moto G2",
+      "co2": 63
+    },
+    {
+      "model": "Motorola Moto G3",
+      "co2": 64
+    },
+    {
+      "model": "Motorola Moto G4",
+      "co2": 61
+    },
+    {
+      "model": "Motorola Moto G5",
+      "co2": 90
+    },
+    {
+      "model": "Motorola Moto G6",
+      "co2": 67
+    },
+    {
+      "model": "Motorola Moto G7",
+      "co2": 86
+    },
+    {
+      "model": "Motorola Moto G8",
+      "co2": 42
+    },
+    {
+      "model": "Motorola Moto G9",
+      "co2": 82
+    },
+    {
+      "model": "Motorola Moto G10",
+      "co2": 43
+    },
+    {
+      "model": "Motorola Moto G Power",
+      "co2": 98
+    },
+    {
+      "model": "Motorola Moto G Stylus",
+      "co2": 68
+    },
+    {
+      "model": "Motorola Razr 2020",
+      "co2": 75
+    },
+    {
+      "model": "Motorola Razr 2022",
+      "co2": 81
+    },
+    {
+      "model": "Nokia Nokia 3310",
+      "co2": 96
+    },
+    {
+      "model": "Nokia Nokia 1100",
+      "co2": 71
+    },
+    {
+      "model": "Nokia Nokia 6600",
+      "co2": 61
+    },
+    {
+      "model": "Nokia Nokia N70",
+      "co2": 91
+    },
+    {
+      "model": "Nokia Nokia N95",
+      "co2": 65
+    },
+    {
+      "model": "Nokia Nokia Lumia 520",
+      "co2": 71
+    },
+    {
+      "model": "Nokia Nokia Lumia 920",
+      "co2": 44
+    },
+    {
+      "model": "Nokia Nokia 3",
+      "co2": 61
+    },
+    {
+      "model": "Nokia Nokia 5",
+      "co2": 52
+    },
+    {
+      "model": "Nokia Nokia 6",
+      "co2": 67
+    },
+    {
+      "model": "Nokia Nokia 7 Plus",
+      "co2": 82
+    },
+    {
+      "model": "Nokia Nokia 8.3 5G",
+      "co2": 63
+    },
+    {
+      "model": "Nokia Nokia G21",
+      "co2": 79
+    },
+    {
+      "model": "Asus ZenFone 2",
+      "co2": 57
+    },
+    {
+      "model": "Asus ZenFone 3",
+      "co2": 95
+    },
+    {
+      "model": "Asus ZenFone 4",
+      "co2": 64
+    },
+    {
+      "model": "Asus ZenFone 5",
+      "co2": 90
+    },
+    {
+      "model": "Asus ZenFone 6",
+      "co2": 93
+    },
+    {
+      "model": "Asus ZenFone 7",
+      "co2": 89
+    },
+    {
+      "model": "Asus ZenFone 8",
+      "co2": 53
+    },
+    {
+      "model": "Asus ZenFone 9",
+      "co2": 92
+    },
+    {
+      "model": "Asus ZenFone 10",
+      "co2": 76
+    },
+    {
+      "model": "Asus ROG Phone",
+      "co2": 43
+    },
+    {
+      "model": "Asus ROG Phone 2",
+      "co2": 62
+    },
+    {
+      "model": "Asus ROG Phone 3",
+      "co2": 76
+    },
+    {
+      "model": "Asus ROG Phone 5",
+      "co2": 58
+    },
+    {
+      "model": "Asus ROG Phone 6",
+      "co2": 100
+    },
+    {
+      "model": "Asus ROG Phone 7",
+      "co2": 44
+    },
+    {
+      "model": "Asus ROG Phone 8",
+      "co2": 81
+    },
+    {
+      "model": "Google Pixel",
+      "co2": 60
+    },
+    {
+      "model": "Google Pixel 2",
+      "co2": 62
+    },
+    {
+      "model": "Google Pixel 3",
+      "co2": 64
+    },
+    {
+      "model": "Google Pixel 3a",
+      "co2": 61
+    },
+    {
+      "model": "Google Pixel 4",
+      "co2": 66
+    },
+    {
+      "model": "Google Pixel 4a",
+      "co2": 63
+    },
+    {
+      "model": "Google Pixel 5",
+      "co2": 67
+    },
+    {
+      "model": "Google Pixel 5a",
+      "co2": 65
+    },
+    {
+      "model": "Google Pixel 6",
+      "co2": 85
+    },
+    {
+      "model": "Google Pixel 6a",
+      "co2": 82
+    },
+    {
+      "model": "Google Pixel 7",
+      "co2": 87
+    },
+    {
+      "model": "Google Pixel 7a",
+      "co2": 84
+    },
+    {
+      "model": "Google Pixel 8",
+      "co2": 88
+    },
+    {
+      "model": "Google Pixel 8a",
+      "co2": 85
+    },
+    {
+      "model": "Google Pixel 8 Pro",
+      "co2": 90
+    }
+  ]
